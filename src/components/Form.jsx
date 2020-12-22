@@ -20,12 +20,19 @@ class Form extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const {title, selection, parameter1, parameter2} = this.state;
-    alert(`Title: ${title},\nSelection: ${selection},\nParameter 1: ${parameter1},\nParameter 2: ${parameter2}`)
+    const { title, selection, parameter1, parameter2 } = this.state;
+    alert(
+      `Title: ${title},\nSelection: ${selection},\nParameter 1: ${parameter1},\nParameter 2: ${parameter2}`
+    );
   };
 
   render() {
-    const selections = ["selection 1", "selection 2", "selection 3", "selection 4"]
+    const selections = [
+      "selection 1",
+      "selection 2",
+      "selection 3",
+      "selection 4",
+    ];
     return (
       <div>
         <h1>Hello World</h1>
@@ -51,7 +58,8 @@ class Form extends Component {
           <br />
           <label htmlFor="parameter2">Parameter 2:</label>
           <input type="text" id="parameter2" onChange={this.onChange} />
-        <button>Submit</button>
+          <br />
+          <button>Submit</button>
         </form>
       </div>
     );
