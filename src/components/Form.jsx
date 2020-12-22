@@ -3,38 +3,55 @@ import React, { Component } from "react";
 class Form extends Component {
   state = {
     title: "",
-    selections: ['selection 1', 'selection 2', 'selection 3', 'selection 4'],
-    selection: '',
+    selection: "",
     parameter1: "",
     parameter2: "",
   };
 
   onChange = (event) => {
-      const {id, value} = event.target;
-      this.setState({[id]: value})
-  }
+    const { id, value } = event.target;
+    this.setState({ [id]: value });
+  };
 
   onSelect = (event) => {
-    const {id, value} = event.target;
-    this.setState({[id]: value})
-}
+    const { id, value } = event.target;
+    this.setState({ [id]: value });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const {title, selection, parameter1, parameter2} = this.state;
+    alert(`Title: ${title},\nSelection: ${selection},\nParameter 1: ${parameter1},\nParameter 2: ${parameter2}`)
+  };
 
   render() {
-    const {selections} = this.state;
+    const selections = ["selection 1", "selection 2", "selection 3", "selection 4"]
     return (
       <div>
         <h1>Hello World</h1>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label htmlFor="title">Title:</label>
-          <input type="text" id='title' onKeyUp={this.onChange}/><br/>
+          <input type="text" id="title" onChange={this.onChange} />
+          <br />
           <label htmlFor="selection">Selection:</label>
-          <select name="" id="selection" onChange={this.onSelect}><option value="none" defaultValue='Please select' disabled hidden></option>{selections.map((selection) => {
-              return(<option key={selection}>{selection}</option>)
-          })}</select><br/>
+          <select name="" id="selection" onChange={this.onSelect}>
+            <option
+              value="none"
+              defaultValue="Please select"
+              disabled
+              hidden
+            ></option>
+            {selections.map((selection) => {
+              return <option key={selection}>{selection}</option>;
+            })}
+          </select>
+          <br />
           <label htmlFor="parameter1">Parameter 1:</label>
-          <input type="text" id='parameter1' onKeyUp={this.onChange}/><br/>
+          <input type="text" id="parameter1" onChange={this.onChange} />
+          <br />
           <label htmlFor="parameter2">Parameter 2:</label>
-          <input type="text" id='parameter2' onKeyUp={this.onChange}/>
+          <input type="text" id="parameter2" onChange={this.onChange} />
+        <button>Submit</button>
         </form>
       </div>
     );
