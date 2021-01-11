@@ -20,10 +20,11 @@ class Form extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { title, selection, parameter1, parameter2 } = this.state;
-    alert(
-      `Title: ${title},\nSelection: ${selection},\nParameter 1: ${parameter1},\nParameter 2: ${parameter2}`
-    );
+    // const { title, selection, parameter1, parameter2 } = this.state;
+    window.postMessage(this.state);
+    // alert(
+    //   `Title: ${title},\nSelection: ${selection},\nParameter 1: ${parameter1},\nParameter 2: ${parameter2}`
+    // );
   };
 
   render() {
