@@ -22,7 +22,7 @@ class Form extends Component {
     event.preventDefault();
     // const { title, selection, parameter1, parameter2 } = this.state;
     console.log(JSON.stringify(this.state));
-    window.postMessage(JSON.stringify(this.state));
+    window.CefSharp.postMessage(JSON.stringify(this.state));
     // alert(
     //   `Title: ${title},\nSelection: ${selection},\nParameter 1: ${parameter1},\nParameter 2: ${parameter2}`
     // );
