@@ -17,7 +17,7 @@ class Form extends Component {
     const { id, value } = event.target;
     this.setState({ [id]: value });
   };
-  cefsharp () {
+  cefsharp = function () {
     CefSharp.PostMessage(JSON.stringify(this.state));
   }
   handleSubmit = (event) => {
