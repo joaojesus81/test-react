@@ -17,12 +17,14 @@ class Form extends Component {
     const { id, value } = event.target;
     this.setState({ [id]: value });
   };
-
+  cefsharp () {
+    CefSharp.PostMessage(JSON.stringify(this.state));
+  }
   handleSubmit = (event) => {
     event.preventDefault();
     // const { title, selection, parameter1, parameter2 } = this.state;
-    console.log(JSON.stringify(this.state));
-    () => CefSharp.PostMessage(JSON.stringify(this.state))}
+    // console.log(JSON.stringify(this.state));
+    this.cefsharp();
     
     // alert(
     //   `Title: ${title},\nSelection: ${selection},\nParameter 1: ${parameter1},\nParameter 2: ${parameter2}`
