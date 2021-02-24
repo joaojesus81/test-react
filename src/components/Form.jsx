@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import sendSomething from './cefsharp'
 
 class Form extends Component {
   state = {
@@ -17,15 +18,12 @@ class Form extends Component {
     const { id, value } = event.target;
     this.setState({ [id]: value });
   };
-  cefsharp = function () {
-    CefSharp.PostMessage(JSON.stringify(this.state));
-  }
+  
   handleSubmit = (event) => {
     event.preventDefault();
     // const { title, selection, parameter1, parameter2 } = this.state;
     // console.log(JSON.stringify(this.state));
-    this.cefsharp();
-    
+    sendSomething(JSON.stringify(this.state))
     // alert(
     //   `Title: ${title},\nSelection: ${selection},\nParameter 1: ${parameter1},\nParameter 2: ${parameter2}`
     // );
