@@ -21,10 +21,12 @@ class Form extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     // const { title, selection, parameter1, parameter2 } = this.state;
-    window.postMessage(this.state);
+    console.log(JSON.stringify(this.state));
+    window.postMessage(JSON.stringify(this.state));
     // alert(
     //   `Title: ${title},\nSelection: ${selection},\nParameter 1: ${parameter1},\nParameter 2: ${parameter2}`
     // );
+    console.clear();
   };
 
   render() {
