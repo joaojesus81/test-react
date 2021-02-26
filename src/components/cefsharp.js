@@ -7,10 +7,18 @@ export function sendSomething(msg) {
     CefSharp.PostMessage(msg)
 }
 
-export function getSomething(msg) {
-    CefSharp.BindObjectAsync('boundAsync').then((result) => {
-        boundAsync.space('CefSharp').then((res) => {
-            return res;
-        })
+//export function getSomething(msg) {
+//    CefSharp.BindObjectAsync('boundAsync').then((result) => {
+//        boundAsync.space('CefSharp').then((res) => {
+//            return res;
+//        })
+//    })
+//}
+
+export async function getSomething(msg) {
+    await CefSharp.BindObjectAsync("boundAsync", "bound");
+
+    boundAsync.space('CefSharp').then((result) => {
+        return result;
     })
 }
