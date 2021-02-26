@@ -19,6 +19,7 @@ export async function getSomething() {
     await CefSharp.BindObjectAsync("boundAsync", "bound");
 
     boundAsync.space('CefSharp').then((result) => {
+        console.log(result)
         return result;
     })
 }

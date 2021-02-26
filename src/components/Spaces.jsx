@@ -6,6 +6,7 @@ class Spaces extends Component {
         msg: ''
     }
     asyncSpaces = () => {
+        console.log(getSomething());
         this.setState({msg: getSomething()});
         /* let result = getSomething();
         if(typeof result === 'string'){
