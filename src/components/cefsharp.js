@@ -15,7 +15,7 @@ export function sendSomething(msg) {
 //    })
 //}
 
-export async function getSomething(msg) {
+export async function getSomething() {
     await CefSharp.BindObjectAsync("boundAsync", "bound");
 
     boundAsync.space('CefSharp').then((result) => {
