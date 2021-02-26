@@ -20,6 +20,6 @@ export async function getSomething() {
 
     boundAsync.space('CefSharp').then((result) => {
         console.log(result)
-        return result;
+        asyncCallback();
     })
 }
