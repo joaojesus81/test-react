@@ -1,3 +1,16 @@
-export default function sendSomething(msg) {
-    CefSharp.PostMessage(msg) // eslint-disable-line
+// functions in this file will be excluded from eslint checks
+// to avoid compiling errors since javascript does not recognize
+// cefsharp commands but they will be correctly interpreted by .NET
+
+/* eslint-disable */
+export function sendSomething(msg) {
+    CefSharp.PostMessage(msg)
+}
+
+export function getSomething(msg) {
+    CefSharp.BindObjectAsync('boundAsync').then((result) => {
+        boundAsync.space('CefSharp').then((res) => {
+            return res;
+        })
+    })
 }

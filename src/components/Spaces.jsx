@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
+import {getSomething} from './cefsharp'
 
 class Spaces extends Component {
     state = {
         msg: ''
     }
     asyncSpaces = () => {
-        if(window.boundAsync){
-            window.boundAsync.space().then(function (res) {
-                this.setState({ msg: res });
-            })
-        } else {
-            console.log('no boundasync found')
-        }
+        getSomething()
+
+
+        // if(window.boundAsync){
+        //     window.boundAsync.space().then(function (res) {
+        //         this.setState({ msg: res });
+        //     })
+        // } else {
+        //     console.log('no boundasync found')
+        // }
 
     }
     render() {

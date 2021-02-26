@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import sendSomething from './cefsharp'
+import {sendSomething} from './cefsharp'
 
 class Form extends Component {
   state = {
