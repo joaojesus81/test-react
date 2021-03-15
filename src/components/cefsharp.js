@@ -33,5 +33,9 @@ export function sendToRevit(msg) {
 } */
 
 export function receiveFromRevit(msg) {
-  document.getElementById("tbReceivedFromRevit").value = msg;
+  try {
+    return msg;
+  } catch (error) {
+    console.log(error);
+  }
 }
