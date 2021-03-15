@@ -32,10 +32,6 @@ export function sendToRevit(msg) {
   });
 } */
 
-export async function receiveFromRevit(message) {
-  try {
-    return message;
-  } catch (error) {
-    console.log(error);
-  }
+export function receiveFromRevit(message) {
+  document.getElementById("tbReceivedFromRevit").value = message;
 }

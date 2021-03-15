@@ -2,22 +2,17 @@ import React, { Component } from "react";
 import { receiveFromRevit } from "./cefsharp";
 
 class Form extends Component {
-  state = {
-    message: "",
-  };
-
-  handleRequest = () => {
-    alert(receiveFromRevit());
-    receiveFromRevit((value) => {
-      this.setState({ message: value });
-    });
-  };
+  componentDidMount() {
+    receiveFromRevit();
+  }
 
   render() {
     return (
       <div>
-        <input type="text" defaultValue={this.state.message} />
-        <button onClick={this.handleRequest}>Receive from Revit</button>
+        <label id="tbReceivedFromRevit" className="tbReceivedFromRevit">
+          Received from Revit
+        </label>
+        <input type="text" id="tbReceivedFromRevit" />
       </div>
     );
   }
