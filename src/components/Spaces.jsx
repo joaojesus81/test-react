@@ -1,40 +1,34 @@
-import React, { Component } from 'react';
-import {getSomething} from './cefsharp'
+import React, { Component } from "react";
+import { sendToRevit } from "./cefsharp";
 
 class Spaces extends Component {
-    state = {
-        msg: ''
-    }
-    asyncSpaces = () => {
-        const result = getSomething();
-        
-        window.alert(result);
-        // console.log(result);
-        this.setState({msg: result});
-        /* let result = getSomething();
-        if(typeof result === 'string'){
-            this.setStage({msg: result})
-        } else {
-            this.setStage({msg: (typeof result)})
-        } */
+  state = {
+    msg: "",
+  };
+  submitPost = (submitEvent) => {
+    submitEvent.preventDefault();
+    sendToRevit(this.state.msg);
+  };
 
-        // if(window.boundAsync){
-        //     window.boundAsync.space().then(function (res) {
-        //         this.setState({ msg: res });
-        //     })
-        // } else {
-        //     console.log('no boundasync found')
-        // }
-
-    }
-    render() {
-        return (
-            <div>
-                <button onClick={this.asyncSpaces}>JS</button>
-                <p>{this.state.msg}</p>
-            </div>
-        );
-    }
+  updateInput = (changeEvent) => {
+    const { id, value } = changeEvent.target;
+    this.setState({ [id]: value });
+  };
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.submitPost}>
+          <input
+            type="text"
+            id="msg"
+            value={this.state.msg}
+            onChange={this.updateInput}
+          />
+          <button>Send to Revit</button>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default Spaces;
