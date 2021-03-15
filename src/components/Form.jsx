@@ -6,8 +6,8 @@ class Form extends Component {
     message: "",
   };
 
-  handleRequest = (clickEvent) => {
-    clickEvent.preventDefault();
+  handleRequest = () => {
+    alert(receiveFromRevit());
     this.setState({ message: receiveFromRevit() });
   };
 
