@@ -32,7 +32,7 @@ export function sendToRevit(msg) {
   });
 } */
 
-export function receiveFromRevit(message) {
+export async function receiveFromRevit(message) {
   try {
     return message;
   } catch (error) {

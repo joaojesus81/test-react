@@ -8,7 +8,9 @@ class Form extends Component {
 
   handleRequest = () => {
     alert(receiveFromRevit());
-    this.setState({ message: receiveFromRevit() });
+    receiveFromRevit((value) => {
+      this.setState({ message: value });
+    });
   };
 
   render() {
