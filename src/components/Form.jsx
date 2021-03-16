@@ -6,7 +6,7 @@ class Form extends Component {
 
   handleClick = (clickEvent) => {
     clickEvent.preventDefault();
-    this.setState({ message: getSomething() });
+    alert(getSomething());
   };
 
   render() {
