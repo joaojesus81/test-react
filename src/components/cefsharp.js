@@ -31,7 +31,7 @@ export async function getSomething() {
       return result;
     });
   } catch (error) {
-    console.log(error);
+    return error;
   }
 }
 
