@@ -23,15 +23,18 @@ export function sendToRevit(msg) {
 //    })
 //}
 
-/* export async function getSomething() {
-  await CefSharp.BindObjectAsync("boundAsync", "bound");
+export async function getSomething() {
+  try {
+    await CefSharp.BindObjectAsync("boundAsync", "bound");
 
-  boundAsync.space("CefSharp").then((result) => {
-    console.log(result);
-    asyncCallback();
-  });
-} */
-
-export function receiveFromRevit(message) {
-  document.getElementById("tbReceivedFromRevit").value = message;
+    boundAsync.space("CefSharp").then((result) => {
+      return result;
+    });
+  } catch (error) {
+    console.log(error);
+  }
 }
+
+// export function receiveFromRevit(message) {
+//   document.getElementById("tbReceivedFromRevit").value = message;
+// }
