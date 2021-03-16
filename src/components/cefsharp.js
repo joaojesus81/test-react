@@ -28,7 +28,7 @@ export async function getSomething() {
     await CefSharp.BindObjectAsync("boundAsync", "bound");
 
     boundAsync.space("CefSharp").then((result) => {
-      return result;
+      alert(result);
     });
   } catch (error) {
     return error;
